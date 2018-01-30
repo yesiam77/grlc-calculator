@@ -99,7 +99,7 @@ class App extends Component {
             <Row>
               <Col>
                 <FormGroup>
-                  <Label for="hashrate">Your hashrate</Label>
+                  <Label for="hashrate">Your hashrate <a href="https://www.reddit.com/r/garlicoinMining/comments/7s1j0z/lets_get_some_baseline_hashrates/" target="_blank">(?)</a></Label>
                   <InputGroup>
                     <Input name="hashrate" id="hashrate" value={this.state.hashrate} onChange={this.hashrateChange} />
                     <InputGroupAddon className='input-group-append'>

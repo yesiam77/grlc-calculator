@@ -16,7 +16,7 @@ class App extends Component {
       pool: 1,
       price: 2,
       coinblock: 50,
-      coef: 0.9
+      coef: 0.92
     }
 
     this.hashrateChange = this.hashrateChange.bind(this);

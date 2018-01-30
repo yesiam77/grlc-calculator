@@ -199,10 +199,10 @@ class App extends Component {
             <tbody>
               <tr>
                 <th scope="row">Mined coins</th>
-                <td>{(75*(this.percentNetwork()/100)).toFixed(6)} GRLC</td>
-                <td>{(60*75*(this.percentNetwork()/100)).toFixed(6)} GRLC</td>
-                <td>{(24*60*75*(this.percentNetwork()/100)).toFixed(6)} GRLC</td>
-                <td>{(30*24*60*75*(this.percentNetwork()/100)).toFixed(6)} GRLC</td>
+                <td><b>{(75*(this.percentNetwork()/100)).toFixed(6)} GRLC</b></td>
+                <td><b>{(60*75*(this.percentNetwork()/100)).toFixed(6)} GRLC</b></td>
+                <td><b>{(24*60*75*(this.percentNetwork()/100)).toFixed(6)} GRLC</b></td>
+                <td><b>{(30*24*60*75*(this.percentNetwork()/100)).toFixed(6)} GRLC</b></td>
               </tr>
               <tr>
                 <th scope="row">USD</th>

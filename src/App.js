@@ -15,7 +15,8 @@ class App extends Component {
       cost: 0.12,
       pool: 1,
       price: 2,
-      coinblock: 50
+      coinblock: 50,
+      coef: 0.9
     }
 
     this.hashrateChange = this.hashrateChange.bind(this);
@@ -200,19 +201,19 @@ class App extends Component {
             <tbody>
               <tr>
                 <th scope="row">Mined coins</th>
-                <td><b>{(75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
-                <td><b>{(60*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
-                <td><b>{(24*60*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
-                <td><b>{(30*24*60*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
-                <td><b>{(365*24*60*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
+                <td><b>{(this.state.coef*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
+                <td><b>{(this.state.coef*60*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
+                <td><b>{(this.state.coef*24*60*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
+                <td><b>{(this.state.coef*30*24*60*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
+                <td><b>{(this.state.coef*365*24*60*75*(this.percentNetwork()/100)).toFixed(6)}</b></td>
               </tr>
               <tr>
                 <th scope="row">USD</th>
-                <td>${(this.state.price*75*(this.percentNetwork()/100)).toFixed(6)}</td>
-                <td>${(this.state.price*60*75*(this.percentNetwork()/100)).toFixed(6)}</td>
-                <td>${(this.state.price*24*60*75*(this.percentNetwork()/100)).toFixed(6)}</td>
-                <td>${(this.state.price*30*24*60*75*(this.percentNetwork()/100)).toFixed(6)}</td>
-                <td>${(this.state.price*365*24*60*75*(this.percentNetwork()/100)).toFixed(6)}</td>
+                <td>${(this.state.price*75*this.state.coef*(this.percentNetwork()/100)).toFixed(6)}</td>
+                <td>${(this.state.price*60*75*this.state.coef*(this.percentNetwork()/100)).toFixed(6)}</td>
+                <td>${(this.state.price*24*60*75*this.state.coef*(this.percentNetwork()/100)).toFixed(6)}</td>
+                <td>${(this.state.price*30*24*60*75*this.state.coef*(this.percentNetwork()/100)).toFixed(6)}</td>
+                <td>${(this.state.price*365*24*60*75*this.state.coef*(this.percentNetwork()/100)).toFixed(6)}</td>
               </tr>
               <tr>
                 <th scope="row">Power cost</th>
@@ -232,11 +233,11 @@ class App extends Component {
               </tr>
               <tr>
                 <th scope="row">Profit</th>
-                <td><b>${((this.state.price*75*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*0.017/1000)) - (this.state.pool == 0 ? 0 : this.state.price*75*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
-                <td><b>${((this.state.price*60*75*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*1/1000)) - (this.state.pool == 0 ? 0 : this.state.price*60*75*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
-                <td><b>${((this.state.price*24*60*75*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*24/1000)) - (this.state.pool == 0 ? 0 : this.state.price*24*60*75*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
-                <td><b>${((this.state.price*30*24*60*75*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*24*30/1000)) - (this.state.pool == 0 ? 0 : this.state.price*30*24*60*75*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
-                <td><b>${((this.state.price*365*24*60*75*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*24*365/1000)) - (this.state.pool == 0 ? 0 : this.state.price*365*24*60*75*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
+                <td><b>${((this.state.price*75*this.state.coef*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*0.017/1000)) - (this.state.pool == 0 ? 0 : this.state.price*75*this.state.coef*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
+                <td><b>${((this.state.price*60*75*this.state.coef*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*1/1000)) - (this.state.pool == 0 ? 0 : this.state.price*60*75*this.state.coef*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
+                <td><b>${((this.state.price*24*60*75*this.state.coef*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*24/1000)) - (this.state.pool == 0 ? 0 : this.state.price*24*60*75*this.state.coef*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
+                <td><b>${((this.state.price*30*24*60*75*this.state.coef*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*24*30/1000)) - (this.state.pool == 0 ? 0 : this.state.price*30*24*60*75*this.state.coef*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
+                <td><b>${((this.state.price*365*24*60*75*this.state.coef*(this.percentNetwork()/100)) - (this.state.cost*(this.state.power*24*365/1000)) - (this.state.pool == 0 ? 0 : this.state.price*365*24*60*75*this.state.coef*(this.percentNetwork()/100)*(this.state.pool/100))).toFixed(6)}</b></td>
               </tr>
             </tbody>
           </table>

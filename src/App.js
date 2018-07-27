@@ -34,7 +34,7 @@ class App extends Component {
   componentWillMount() {
     const self = this;
 
-    axios.get('TUX https://garli.co.in/api/getnetworkhashps')
+    axios.get('https://explore.tuxtoke.life/api/getnetworkhashps')
     .then(function (response) {
       self.setState({
         nethashrate: (response.data / (1000 * 1000 * 1000)).toFixed(4)
@@ -44,7 +44,7 @@ class App extends Component {
       console.log("Error, cannot fetch API");
     });  
 
-    axios.get('TUX https://api.coinmarketcap.com/v1/ticker/garlicoin/')
+    axios.get('https://api.coinmarketcap.com/v1/ticker/tuxcoin/')
     .then(function (response) {
       self.setState({
         price: response.data[0].price_usd

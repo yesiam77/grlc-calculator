@@ -147,7 +147,7 @@ class App extends Component {
         </Jumbotron>
 
         <Jumbotron style={{padding: '2rem'}}>
-          <h2>GRLC information</h2>
+          <h2>TUX information</h2>
           <Form style={{paddingTop: '1rem'}}>
             <Row>
               <Col>
@@ -163,7 +163,7 @@ class App extends Component {
               </Col>
               <Col>
                 <FormGroup>
-                  <Label for="cost">GRLC price</Label>
+                  <Label for="cost">TUX price</Label>
                   <InputGroup>
                     <Input name="cost" id="cost" value={this.state.price} onChange={this.priceChange} />
                     <InputGroupAddon className='input-group-append'>

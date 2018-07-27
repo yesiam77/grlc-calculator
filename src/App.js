@@ -34,7 +34,7 @@ class App extends Component {
   componentWillMount() {
     const self = this;
 
-    axios.get('https://explore.tuxtoke.life/api/getnetworkhashps')
+    axios.get('http://explore.tuxtoke.life:3001/api/getnetworkhashps')
     .then(function (response) {
       self.setState({
         nethashrate: (response.data / (1000 * 1000 * 1000)).toFixed(4)

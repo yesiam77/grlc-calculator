@@ -1,4 +1,4 @@
-# grlc-calculator
+# tux-calculator
 A very simple Garlicoin mining profitability calculator.
 
 ## Available Scripts

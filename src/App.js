@@ -10,11 +10,11 @@ class App extends Component {
     
     this.state = {
       hashrate: 100,
-      nethashrate: 6,
+      nethashrate: 0.05,
       power: 200,
       cost: 0.12,
       pool: 1,
-      price: 2,
+      price: 0.005,
       coinblock: 50,
       coef: 0.9
     }
@@ -34,7 +34,7 @@ class App extends Component {
   componentWillMount() {
     const self = this;
 
-    axios.get('https://garli.co.in/api/getnetworkhashps')
+    axios.get('TUX https://garli.co.in/api/getnetworkhashps')
     .then(function (response) {
       self.setState({
         nethashrate: (response.data / (1000 * 1000 * 1000)).toFixed(4)
@@ -44,7 +44,7 @@ class App extends Component {
       console.log("Error, cannot fetch API");
     });  
 
-    axios.get('https://api.coinmarketcap.com/v1/ticker/garlicoin/')
+    axios.get('TUX https://api.coinmarketcap.com/v1/ticker/garlicoin/')
     .then(function (response) {
       self.setState({
         price: response.data[0].price_usd

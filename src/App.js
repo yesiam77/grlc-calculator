@@ -9,13 +9,13 @@ class App extends Component {
     super(props);
     
     this.state = {
-      hashrate: 100,
+      hashrate: 1000,
       nethashrate: 0.05,
       power: 200,
       cost: 0.12,
       pool: 1,
       price: 0.005,
-      coinblock: 50,
+      coinblock: 69,
       coef: 0.9
     }
 

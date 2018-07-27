@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header clearfix">
-        <h3 className="text-muted">GRLC Mining Calculator</h3>
+        <h3 className="text-muted">TUX Mining Calculator</h3>
       </div>
     );
   }

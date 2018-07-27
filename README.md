@@ -1,5 +1,5 @@
 # tux-calculator
-A very simple Garlicoin mining profitability calculator.
+A very simple Tuxcoin mining profitability calculator.
 
 ## Available Scripts
 

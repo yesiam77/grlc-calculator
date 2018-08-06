@@ -10,10 +10,10 @@ class App extends Component {
     
     this.state = {
       hashrate: 1000,
-      nethashrate: 1.00,
+      nethashrate: 1.30,
       power: 200,
       cost: 0.12,
-      pool: 1.3,
+      pool: 1,
       price: 0.007,
       coinblock: 69,
       coef: 0.9

@@ -13,8 +13,8 @@ class App extends Component {
       nethashrate: 1.00,
       power: 200,
       cost: 0.12,
-      pool: 1,
-      price: 0.005,
+      pool: 1.3,
+      price: 0.007,
       coinblock: 69,
       coef: 0.9
     }
